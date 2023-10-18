@@ -4,10 +4,10 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
 
 const navLink = <>
-<li className="text-lg text-lime-500"><NavLink to={"/"}>Home</NavLink></li>
-<li className="text-lg text-lime-500"><NavLink to={"/addProducts"}>Add Products</NavLink></li>
-<li className="text-lg text-lime-500"><NavLink to={"/myCart"}>My Cart</NavLink></li>
-<li className="text-lg text-lime-500"><NavLink to={"/login"}>Login</NavLink></li>
+<li className="text-lg text-emerald-500"><NavLink to={"/"}>Home</NavLink></li>
+<li className="text-lg text-emerald-500"><NavLink to={"/addProducts"}>Add Products</NavLink></li>
+<li className="text-lg text-emerald-500"><NavLink to={"/myCart"}>My Cart</NavLink></li>
+<li className="text-lg text-emerald-500"><NavLink to={"/login"}>Login</NavLink></li>
 
 
 </>
