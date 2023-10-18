@@ -1,16 +1,25 @@
-import { NavLink } from "react-router-dom";
-
-
-const Navbar = () => {
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
 
 const navLink = <>
 <li className="text-lg text-emerald-500"><NavLink to={"/"}>Home</NavLink></li>
 <li className="text-lg text-emerald-500"><NavLink to={"/addProducts"}>Add Products</NavLink></li>
 <li className="text-lg text-emerald-500"><NavLink to={"/myCart"}>My Cart</NavLink></li>
-<li className="text-lg text-emerald-500"><NavLink to={"/login"}>Login</NavLink></li>
 
 
 </>
+
+const Navbar = () => {
+
+  const {user,logOut} = useContext(AuthContext)
+
+  const handleLogOut = () => {
+    logOut()
+    .then()
+    .catch()
+  }
+
 
   return (
     <div className="navbar bg-base-100">
@@ -35,7 +44,7 @@ const navLink = <>
     </ul>
   </div>
   <div className="navbar-end">
-  {/* {user ? (
+  {user ? (
           <div className="flex items-center space-x-2">
             <img
               src={user.photoURL} 
@@ -43,15 +52,15 @@ const navLink = <>
               className="h-10 w-10 rounded-full"
             />
             <span className="text-lg">{user.email}</span>
-            <button onClick={handleLogOut} className="btn text-lg text-lime-500">
+            <button onClick={handleLogOut} className="btn text-lg text-emerald-500">
               Logout
             </button>
           </div>
         ) : (
           <Link to={"/login"}>
-            <button className="btn text-lime-500 text-lg">Login</button>
+            <button className="btn text-emerald-500 text-lg">Login</button>
           </Link>
-        )} */}
+        )}
   </div>
 </div>
   );

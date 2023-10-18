@@ -1,25 +1,65 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../Home/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
+import { FcGoogle } from 'react-icons/fc';
 
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
-const {createUser} = useContext(AuthContext)
+const { signInWithGoogle,signIn} = useContext(AuthContext)
+
+const location = useLocation();
+const navigate = useNavigate();
+
 const handleLogin = e => {
   e.preventDefault();
   const form = e.target;
   const email = form.email.value;
   const password = form.password.value;
   console.log(email,password);
-  createUser(email,password)
+  signIn(email,password)
   .then(result => {
-    console.log(result);
+    console.log(result.user);
+
+    toast.success("Login Successful", {
+      position: "top-right",
+      autoClose: 3000, 
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    });
+
+    navigate(location?.state ? location.state : "/");
+
   })
   .catch(error => {
     console.error(error);
+
+    toast.error("Login Failed. Please provide correct information.", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    });
+
   })
 }
+
+const handleGoogleSignIn = () => {
+  signInWithGoogle()
+    .then((result) => {
+      console.log(result.user);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};
+
 
   return (
     <div>
@@ -66,11 +106,11 @@ const handleLogin = e => {
           Register
         </Link>
       </p>
-      {/* <p className="text-center"><span className="font-bold">Sign in With</span> <br />
+      <p className="text-center"><span className="font-bold">Sign in With</span> <br />
         <button onClick={handleGoogleSignIn} className="">
           <FcGoogle className="text-4xl"></FcGoogle>
         </button>
-      </p> */}
+      </p>
     </div>
   </div>
   );

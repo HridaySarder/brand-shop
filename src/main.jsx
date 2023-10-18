@@ -14,6 +14,8 @@ import Login from './components/Login';
 import AuthProvider from './providers/AuthProvider';
 import Home from './Home/Home';
 import Register from './components/Register';
+import PrivateRoute from './Route/PrivateRoute';
+import { ToastContainer } from 'react-toastify';
 
 const router = createBrowserRouter([
   {
@@ -29,11 +31,11 @@ const router = createBrowserRouter([
       },
       {
         path:"/addProducts",
-        element:<AddProducts></AddProducts>
+        element:<PrivateRoute><AddProducts></AddProducts></PrivateRoute>
       },
       {
         path:"/myCart",
-        element:<MyCart></MyCart>
+        element:<PrivateRoute><MyCart></MyCart></PrivateRoute>
       },
       {
         path:"/login",
@@ -52,5 +54,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
      <AuthProvider>
      <RouterProvider router={router} />
      </AuthProvider>
+     <ToastContainer />
   </React.StrictMode>,
 )
