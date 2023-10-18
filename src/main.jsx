@@ -6,13 +6,14 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Navbar from './Home/Navbar';
 import Root from './layouts/Root';
 import Error from './components/Error';
 import AddProducts from './components/AddProducts';
 import MyCart from './components/MyCart';
 import Login from './components/Login';
 import AuthProvider from './providers/AuthProvider';
+import Home from './Home/Home';
+import Register from './components/Register';
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
     children:[
       {
         path:"/",
-        element:<Navbar></Navbar>
+        element:<Home></Home>
       },
       {
         path:"/addProducts",
@@ -35,7 +36,11 @@ const router = createBrowserRouter([
       {
         path:"/login",
         element:<Login></Login>
-      }
+      },
+{
+  path:"/register",
+  element:<Register></Register>
+}
     ]
   },
 ]);
