@@ -1,14 +1,55 @@
+import Swal from "sweetalert2";
 import Navbar from "../Home/Navbar";
 
 
 const AddProducts = () => {
+
+  const handleAddProducts = event => {
+    event.preventDefault();
+  
+    const form = event.target;
+  
+    const image = form.image.value;
+    const name = form.name.value;
+    const brand = form.brand.value;
+    const type = form.type.value;
+    const price = form.price.value;
+    const description = form.description.value;
+    const rating = form.rating.value;
+  
+  const newProduct = {image,name,brand,type,price,description,rating}
+  console.log(newProduct);
+
+  fetch('http://localhost:5000/product',{
+  method:'POST',
+  headers:{
+    'content-type':'application/json'
+  },
+  body:JSON.stringify(newProduct)
+})
+.then(res => res.json())
+.then(data => {
+  console.log(data);
+
+  if(data.insertedId){
+    Swal.fire({
+      title: 'Success!',
+      text: 'Product added successfully',
+      icon: 'success',
+      confirmButtonText: 'Cool'
+    })
+  }
+
+})
+  }
+
   return (
     <div>
       <Navbar></Navbar>
       
     <div className="bg-[#F4F3F0] p-24 ">
       <h2 className="font-extrabold text-5xl text-center">Add a Products</h2>
-      <form>
+      <form onSubmit={handleAddProducts}>
         <div className="flex gap-5">
           <div className="form-control md:w-1/2">
             <label className="label">

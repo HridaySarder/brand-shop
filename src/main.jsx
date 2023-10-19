@@ -16,6 +16,7 @@ import Home from './Home/Home';
 import Register from './components/Register';
 import PrivateRoute from './Route/PrivateRoute';
 import { ToastContainer } from 'react-toastify';
+import ShowProducts from './components/ShowProducts';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,11 @@ const router = createBrowserRouter([
       {
         path:"/myCart",
         element:<PrivateRoute><MyCart></MyCart></PrivateRoute>
+      },
+      {
+        path:'/showProducts',
+        element:<ShowProducts></ShowProducts>,
+        loader: () => fetch('http://localhost:5000/product')
       },
       {
         path:"/login",

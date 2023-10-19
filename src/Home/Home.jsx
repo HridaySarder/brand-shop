@@ -3,6 +3,7 @@ import Banner from "./Banner";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import ProductCard from "../components/ProductCard";
+import ExtraPart1 from "./ExtraPart1";
 
 
 const Home = () => {
@@ -14,11 +15,12 @@ const cards = useLoaderData()
       <Navbar></Navbar>
       <Banner></Banner>
       <h2 className="text-center text-5xl font-bold text-emerald-500 mb-10">Types of Brand</h2>
-      <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-10 mb-10">
+      <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-10 mb-10 mx-auto">
         {
           cards.map(card => <ProductCard key={card.id} cards={card}></ProductCard>)
         }
       </div>
+      <ExtraPart1></ExtraPart1>
       <Footer></Footer>
     </div>
   );
