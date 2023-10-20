@@ -20,7 +20,7 @@ const AddProducts = () => {
   const newProduct = {image,name,brand,type,price,description,rating}
   console.log(newProduct);
 
-  fetch('http://localhost:5000/product',{
+  fetch('https://assignment-10-server-side-lac.vercel.app/product',{
   method:'POST',
   headers:{
     'content-type':'application/json'

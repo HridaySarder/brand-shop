@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-
+import { FcRating } from 'react-icons/fc'
 
 const Card = ({product}) => {
 
@@ -10,13 +10,13 @@ const Card = ({product}) => {
   <figure><img className="h-64 w-full" src={image} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">{name}</h2>
-    <p>Brand: {brand}</p>
+   
     <p>{type}</p>
-    
+    <p className='text-xl text-violet-600'>Brand: {brand}</p>
     <p>{description}</p>
     <div className="flex justify-around">
-    <p>Price:${price}</p>
-    <p>{rating}</p>
+    <p className='font-bold'>Price:${price}</p>
+    <p className='flex items-center font-bold'>Rating: {rating}<FcRating></FcRating></p>
     </div>
     <div className="card-actions justify-end">
       <button className="btn btn-primary w-full">Details</button>

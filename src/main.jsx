@@ -41,7 +41,7 @@ const router = createBrowserRouter([
       {
         path:'/showProducts',
         element:<PrivateRoute><ShowProducts></ShowProducts></PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/product')
+        loader: () => fetch('https://assignment-10-server-side-lac.vercel.app/product')
       },
       {
         path:"/login",
