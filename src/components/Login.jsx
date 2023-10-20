@@ -62,11 +62,11 @@ const handleGoogleSignIn = () => {
 
 
   return (
-    <div>
+    <div className="bg-[#F4F3F0]">
     <Navbar></Navbar>
     <div>
       <h2 className="text-3xl text-center my-10 text-[#039be5] font-bold">
-        Please login
+        Please Login
       </h2>
 
       <form onSubmit={handleLogin} className="md:w-3/4 lg:w-1/2 mx-auto">
@@ -95,7 +95,7 @@ const handleGoogleSignIn = () => {
           />
         </div>
         <div className="form-control mt-6">
-          <button type="submit" className="btn btn-success">
+          <button type="submit" className="btn btn-info">
             Login
           </button>
         </div>

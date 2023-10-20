@@ -73,7 +73,7 @@ e.target.reset()
 
 
   return (
-    <div>
+    <div className="bg-[#F4F3F0]">
       <Navbar></Navbar>
       <div>
         <ToastContainer />
@@ -137,7 +137,7 @@ e.target.reset()
             />
           </div>
           <div className="form-control mt-6">
-            <button type="submit" className="btn btn-success">
+            <button type="submit" className="btn btn-info">
               Register
             </button>
           </div>

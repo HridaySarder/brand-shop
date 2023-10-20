@@ -12,11 +12,14 @@ const Card = ({product}) => {
     <h2 className="card-title">{name}</h2>
     <p>Brand: {brand}</p>
     <p>{type}</p>
-    <p>Price:${price}</p>
+    
     <p>{description}</p>
+    <div className="flex justify-around">
+    <p>Price:${price}</p>
     <p>{rating}</p>
+    </div>
     <div className="card-actions justify-end">
-      <button className="btn btn-primary">Add</button>
+      <button className="btn btn-primary w-full">Details</button>
     </div>
   </div>
 </div>
