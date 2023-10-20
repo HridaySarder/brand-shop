@@ -48,7 +48,7 @@ const AddProducts = () => {
       <Navbar></Navbar>
       
     <div className="bg-[#F4F3F0] p-24 ">
-      <h2 className="font-extrabold text-5xl text-center">Add a Products</h2>
+      <h2 className="font-extrabold text-5xl text-center text-[#039be5]">Add a Products</h2>
       <form onSubmit={handleAddProducts}>
         <div className="flex gap-5">
           <div className="form-control md:w-1/2">
@@ -168,7 +168,7 @@ const AddProducts = () => {
          
          
         </div>
-        <input type="submit" value="Add" className="btn btn-block mt-5" />
+        <input type="submit" value="Add" className="btn btn-info w-full text-white mt-5" />
       </form>
     </div>
     </div>
