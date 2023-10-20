@@ -9,6 +9,6 @@ This is a brand shop website.There are many features in this site.Some features 
 - User can add,delete and update product.
 
 The live site of this website:
-[SmileShop](https://acidic-street.surge.sh/)
+[SmileShop](https://technology-electronics-website.web.app/)
 
 
