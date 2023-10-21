@@ -17,6 +17,7 @@ import Register from './components/Register';
 import PrivateRoute from './Route/PrivateRoute';
 import { ToastContainer } from 'react-toastify';
 import ShowProducts from './components/ShowProducts';
+import ShowDetails from './components/ShowDetails';
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
 {
   path:"/register",
   element:<Register></Register>
+},
+{
+  path:"/showDetails",
+  element:<PrivateRoute><ShowDetails></ShowDetails></PrivateRoute>
 }
     ]
   },

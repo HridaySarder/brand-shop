@@ -12,7 +12,7 @@ const ShowProducts = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <div className="grid md:grid-cols-4 sm:grid-cols-1">
+      <div className="grid space-y-5 md:grid-cols-4 sm:grid-cols-1">
         {
           products.map(product => <Card key={product._id} product={product}></Card>
           )

@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { FcRating } from 'react-icons/fc'
+import { Link } from 'react-router-dom';
 
 const Card = ({product}) => {
 
@@ -19,7 +20,7 @@ const Card = ({product}) => {
     <p className='flex items-center font-bold'>Rating: {rating}<FcRating></FcRating></p>
     </div>
     <div className="card-actions justify-end">
-      <button className="btn btn-primary w-full">Details</button>
+      <button className="btn btn-primary w-full"><Link to={'/showDetails'}>Details</Link></button>
     </div>
   </div>
 </div>
